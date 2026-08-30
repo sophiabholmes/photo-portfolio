@@ -18,7 +18,7 @@ const photos = {
   ],
 
   bts: [
-    // { src: 'images/bts/01.jpg', alt: 'Behind the scenes', caption: '' },
+    // { src: '000403850002 copy.png', alt: 'Behind the scenes', caption: '' },
   ],
 
   events: [
