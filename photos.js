@@ -26,7 +26,7 @@ const photos = {
   ],
 
   portraits: [
-    // { src: '99760021 copy.png', alt: 'Portrait', caption: '' },
+    // { src: '1.png', alt: 'Portrait', caption: '' },
   ],
 
   objects: [
