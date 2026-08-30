@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sophia Bennett Holmes</title>
+  <meta name="description" content="Photography by Sophia Bennett Holmes">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="site-frame">
+    <header class="site-header">
+      <button class="pixel-name js-home" type="button">sophia bennett holmes</button>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar" aria-label="Photo categories">
+        <button class="category js-category" data-category="bts" type="button">BTS</button>
+        <button class="category js-category" data-category="events" type="button">EVENTS</button>
+        <button class="category js-category" data-category="portraits" type="button">PORTRAITS</button>
+        <button class="category js-category" data-category="objects" type="button">OBJECTS</button>
+      </aside>
+
+      <section class="photo-area" aria-live="polite">
+        <div class="photo-grid" id="photoGrid"></div>
+        <div class="empty-state" id="emptyState" hidden>
+          <p>No photographs have been added to this section yet.</p>
+          <p>Edit <code>photos.js</code> and add your filenames.</p>
+        </div>
+      </section>
+    </main>
+
+    <div class="corner-mark" aria-hidden="true">photo archive</div>
+  </div>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-button close" id="closeLightbox" aria-label="Close">×</button>
+    <button class="lightbox-button prev" id="prevPhoto" aria-label="Previous photograph">←</button>
+    <figure class="lightbox-figure">
+      <img id="lightboxImage" src="" alt="">
+      <figcaption id="lightboxCaption"></figcaption>
+    </figure>
+    <button class="lightbox-button next" id="nextPhoto" aria-label="Next photograph">→</button>
+  </div>
+
+  <script src="photos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
