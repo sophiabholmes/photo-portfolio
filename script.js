@@ -1,85 +1,166 @@
-const grid = document.getElementById('photoGrid');
-const emptyState = document.getElementById('emptyState');
-const lightbox = document.getElementById('lightbox');
-const lightboxImage = document.getElementById('lightboxImage');
-const lightboxCaption = document.getElementById('lightboxCaption');
+const photoGrid = document.getElementById("photoGrid");
+const emptyState = document.getElementById("emptyState");
 
-let currentSet = [];
+let currentCategory = "home";
 let currentIndex = 0;
-let currentCategory = 'home';
 
-function render(category) {
+
+// -------------------------------------
+// SHOW PHOTO
+// -------------------------------------
+
+function renderCurrentPhoto() {
+  const items = photos[currentCategory] || [];
+
+  photoGrid.innerHTML = "";
+
+  if (items.length === 0) {
+    emptyState.hidden = false;
+    return;
+  }
+
+  emptyState.hidden = true;
+
+  const photo = items[currentIndex];
+
+  const viewer = document.createElement("div");
+  viewer.className = "photo-viewer";
+
+  viewer.innerHTML = `
+    <figure class="full-photo">
+      <img
+        src="${photo.src}"
+        alt="${photo.alt || ""}"
+      >
+
+      ${
+        photo.caption
+          ? `<figcaption>${photo.caption}</figcaption>`
+          : ""
+      }
+    </figure>
+
+    <div class="photo-controls">
+      <button
+        class="photo-arrow"
+        id="previousPhoto"
+        aria-label="Previous photo"
+      >
+        ←
+      </button>
+
+      <span class="photo-counter">
+        ${currentIndex + 1} / ${items.length}
+      </span>
+
+      <button
+        class="photo-arrow"
+        id="nextPhoto"
+        aria-label="Next photo"
+      >
+        →
+      </button>
+    </div>
+  `;
+
+  photoGrid.appendChild(viewer);
+
+  document
+    .getElementById("previousPhoto")
+    .addEventListener("click", previousPhoto);
+
+  document
+    .getElementById("nextPhoto")
+    .addEventListener("click", nextPhoto);
+}
+
+
+// -------------------------------------
+// OPEN CATEGORY
+// -------------------------------------
+
+function openCategory(category) {
   currentCategory = category;
-  currentSet = photos[category] || [];
-  grid.innerHTML = '';
+  currentIndex = 0;
 
-  emptyState.hidden = currentSet.length > 0;
-
-  currentSet.forEach((photo, index) => {
-    const figure = document.createElement('figure');
-    figure.className = 'photo-card';
-    figure.innerHTML = `<img src="${photo.src}" alt="${photo.alt || ''}" loading="lazy">`;
-    figure.addEventListener('click', () => openLightbox(index));
-    grid.appendChild(figure);
-  });
-
-  const hash = category === 'home' ? '' : `#${category}`;
-  history.replaceState({ category }, '', `${location.pathname}${hash}`);
-  window.scrollTo({ top: 0, behavior: 'instant' });
+  renderCurrentPhoto();
 }
 
-function openLightbox(index) {
-  if (!currentSet.length) return;
-  currentIndex = index;
-  updateLightbox();
-  lightbox.hidden = false;
-  document.body.style.overflow = 'hidden';
-}
 
-function updateLightbox() {
-  const photo = currentSet[currentIndex];
-  lightboxImage.src = photo.src;
-  lightboxImage.alt = photo.alt || '';
-  lightboxCaption.textContent = photo.caption || '';
-}
-
-function closeLightbox() {
-  lightbox.hidden = true;
-  document.body.style.overflow = '';
-}
+// -------------------------------------
+// NEXT
+// -------------------------------------
 
 function nextPhoto() {
-  if (!currentSet.length) return;
-  currentIndex = (currentIndex + 1) % currentSet.length;
-  updateLightbox();
+  const items = photos[currentCategory];
+
+  if (!items || !items.length) return;
+
+  currentIndex = (currentIndex + 1) % items.length;
+
+  renderCurrentPhoto();
 }
 
-function prevPhoto() {
-  if (!currentSet.length) return;
-  currentIndex = (currentIndex - 1 + currentSet.length) % currentSet.length;
-  updateLightbox();
+
+// -------------------------------------
+// PREVIOUS
+// -------------------------------------
+
+function previousPhoto() {
+  const items = photos[currentCategory];
+
+  if (!items || !items.length) return;
+
+  currentIndex =
+    (currentIndex - 1 + items.length) % items.length;
+
+  renderCurrentPhoto();
 }
 
-document.querySelectorAll('.js-category').forEach(button => {
-  button.addEventListener('click', () => render(button.dataset.category));
+
+// -------------------------------------
+// CATEGORY BUTTONS
+// -------------------------------------
+
+document.querySelectorAll(".js-category").forEach(button => {
+  button.addEventListener("click", () => {
+    openCategory(button.dataset.category);
+  });
 });
 
-document.querySelector('.js-home').addEventListener('click', () => render('home'));
-document.getElementById('closeLightbox').addEventListener('click', closeLightbox);
-document.getElementById('nextPhoto').addEventListener('click', nextPhoto);
-document.getElementById('prevPhoto').addEventListener('click', prevPhoto);
 
-lightbox.addEventListener('click', event => {
-  if (event.target === lightbox) closeLightbox();
+// -------------------------------------
+// HOME
+// -------------------------------------
+
+document
+  .querySelector(".js-home")
+  .addEventListener("click", () => {
+    openCategory("home");
+  });
+
+
+// -------------------------------------
+// KEYBOARD ARROWS
+// -------------------------------------
+
+document.addEventListener("keydown", event => {
+  const items = photos[currentCategory];
+
+  if (!items || !items.length) return;
+
+  if (event.key === "ArrowRight") {
+    nextPhoto();
+  }
+
+  if (event.key === "ArrowLeft") {
+    previousPhoto();
+  }
 });
 
-document.addEventListener('keydown', event => {
-  if (lightbox.hidden) return;
-  if (event.key === 'Escape') closeLightbox();
-  if (event.key === 'ArrowRight') nextPhoto();
-  if (event.key === 'ArrowLeft') prevPhoto();
-});
 
-const initialCategory = location.hash.slice(1);
-const validCategories = ['home', 'bts', 'events', 'portraits', 'objects'];
-render(validCategories.includes(initialCategory) ? initialCategory : 'home');
+// -------------------------------------
+// START ON HOME
+// -------------------------------------
+
+openCategory("home");
