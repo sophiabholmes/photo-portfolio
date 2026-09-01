@@ -23,7 +23,7 @@ const photos = {
     { src: "images/events/2.jpg", alt: "", caption: "" },
     { src: "images/events/3.png", alt: "", caption: "" },
     { src: "images/events/4.png", alt: "", caption: "" },
-    { src: "images/events/5.png", alt: "", caption: "" },
+    { src: "images/events/5.jpg", alt: "", caption: "" },
     { src: "images/events/6.png", alt: "", caption: "" },
     { src: "images/events/7.png", alt: "", caption: "" },
     { src: "images/events/8.png", alt: "", caption: "" },
