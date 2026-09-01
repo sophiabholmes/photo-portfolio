@@ -19,16 +19,33 @@ const photos = {
   ],
 
   events: [
-    { src: "images/events/EVENTS-01.jpg", alt: "", caption: "" },
-    { src: "images/events/EVENTS-02.jpg", alt: "", caption: "" },
-    { src: "images/events/EVENTS-03.jpg", alt: "", caption: "" },
-    { src: "images/events/EVENTS-04.jpg", alt: "", caption: "" },
-    { src: "images/events/EVENTS-05.jpg", alt: "", caption: "" },
-    { src: "images/events/EVENTS-06.jpg", alt: "", caption: "" },
-    { src: "images/events/EVENTS-07.jpg", alt: "", caption: "" },
-    { src: "images/events/EVENTS-08.jpg", alt: "", caption: "" },
-    { src: "images/events/EVENTS-09.jpg", alt: "", caption: "" },
-    { src: "images/events/EVENTS-10.jpg", alt: "", caption: "" }
+    { src: "images/events/1.png", alt: "", caption: "" },
+    { src: "images/events/2.jpg", alt: "", caption: "" },
+    { src: "images/events/3.png", alt: "", caption: "" },
+    { src: "images/events/4.png", alt: "", caption: "" },
+    { src: "images/events/5.png", alt: "", caption: "" },
+    { src: "images/events/6.png", alt: "", caption: "" },
+    { src: "images/events/7.png", alt: "", caption: "" },
+    { src: "images/events/8.png", alt: "", caption: "" },
+    { src: "images/events/9.png", alt: "", caption: "" },
+    { src: "images/events/10.png", alt: "", caption: "" }
+    { src: "images/events/11.jpg", alt: "", caption: "" },
+    { src: "images/events/12.png", alt: "", caption: "" },
+    { src: "images/events/13.jpg", alt: "", caption: "" },
+    { src: "images/events/14.png", alt: "", caption: "" },
+    { src: "images/events/15.jpg", alt: "", caption: "" },
+    { src: "images/events/16.png", alt: "", caption: "" },
+    { src: "images/events/17.jpg", alt: "", caption: "" },
+    { src: "images/events/18.png", alt: "", caption: "" },
+    { src: "images/events/19.png", alt: "", caption: "" },
+    { src: "images/events/20.png", alt: "", caption: "" }
+    { src: "images/events/21.png", alt: "", caption: "" },
+    { src: "images/events/22.png", alt: "", caption: "" },
+    { src: "images/events/23.jpg", alt: "", caption: "" },
+    { src: "images/events/24.jpg", alt: "", caption: "" },
+    { src: "images/events/25.jpg", alt: "", caption: "" },
+    { src: "images/events/26.jpg", alt: "", caption: "" },
+    { src: "images/events/27.png", alt: "", caption: "" },
   ],
 
   portraits: [
