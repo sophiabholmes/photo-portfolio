@@ -1,23 +1,21 @@
-
-
 const photos = {
   home: [
-    // { },
   ],
 
   bts: [
-    // { src: '000403850002 copy.png'  },
+    {
+      src: "images/bts/000403850002 copy.png",
+      alt: "Behind the scenes",
+      caption: ""
+    },
   ],
 
   events: [
-    // {  },
   ],
 
   portraits: [
-    // {  },
   ],
 
   objects: [
-    // { },
   ]
 };
