@@ -151,6 +151,8 @@ button {
 ------------------------------ */
 
 .photo-viewer {
+  grid-column: 1 / -1;
+
   min-height: calc(100vh - 225px);
 
   display: flex;
@@ -158,7 +160,6 @@ button {
   align-items: center;
   justify-content: flex-start;
 }
-
 .full-photo {
   margin: 0;
 
