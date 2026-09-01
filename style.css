@@ -116,10 +116,7 @@ button {
   width: 100%;
   min-height: calc(100vh - 210px);
 
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-auto-rows: 25vw;
-  gap: 12px;
+  display: block;
 }
 
 .photo-card {
@@ -153,6 +150,7 @@ button {
 .photo-viewer {
   grid-column: 1 / -1;
 
+  width: 100%;
   min-height: calc(100vh - 225px);
 
   display: flex;
