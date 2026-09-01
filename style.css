@@ -89,7 +89,7 @@ button {
   border: 0;
   background: transparent;
   padding: 0;
-  font-size: clamp(21px, 1.72vw, 31px);
+  font-size: clamp(17px, 1.35vw, 24px);
   line-height: 0.95;
   letter-spacing: 0.075em;
   cursor: pointer;
