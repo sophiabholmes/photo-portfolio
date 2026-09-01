@@ -71,13 +71,12 @@ function renderCurrentPhoto() {
 
   photoGrid.appendChild(viewer);
 
-  document
-    .getElementById("previousPhoto")
-    .addEventListener("click", previousPhoto);
+const previousButton = document.getElementById("previousPhoto");
+const nextButton = document.getElementById("nextPhoto");
 
-  document
-    .getElementById("nextPhoto")
-    .addEventListener("click", nextPhoto);
+if (previousButton && nextButton) {
+  previousButton.addEventListener("click", previousPhoto);
+  nextButton.addEventListener("click", nextPhoto);
 }
 
 
