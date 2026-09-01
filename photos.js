@@ -4,9 +4,9 @@ const photos = {
 
   bts: [
     {
-      src: "images/bts/000403850002 copy.png",
+      src: "1.png",
       alt: "Behind the scenes",
-      caption: ""
+      caption: "elephantine, 2024"
     },
   ],
 
