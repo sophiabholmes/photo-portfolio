@@ -28,7 +28,7 @@ const photos = {
     { src: "images/events/7.png", alt: "", caption: "" },
     { src: "images/events/8.png", alt: "", caption: "" },
     { src: "images/events/9.png", alt: "", caption: "" },
-    { src: "images/events/10.png", alt: "", caption: "" }
+    { src: "images/events/10.png", alt: "", caption: "" },
     { src: "images/events/11.jpg", alt: "", caption: "" },
     { src: "images/events/12.png", alt: "", caption: "" },
     { src: "images/events/13.jpg", alt: "", caption: "" },
@@ -38,7 +38,7 @@ const photos = {
     { src: "images/events/17.jpg", alt: "", caption: "" },
     { src: "images/events/18.png", alt: "", caption: "" },
     { src: "images/events/19.png", alt: "", caption: "" },
-    { src: "images/events/20.png", alt: "", caption: "" }
+    { src: "images/events/20.png", alt: "", caption: "" },
     { src: "images/events/21.png", alt: "", caption: "" },
     { src: "images/events/22.png", alt: "", caption: "" },
     { src: "images/events/23.jpg", alt: "", caption: "" },
