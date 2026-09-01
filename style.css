@@ -47,6 +47,11 @@ button {
   position: relative;
 }
 
+
+/* -------------------------------------
+   HEADER
+------------------------------------- */
+
 .site-header {
   position: fixed;
   top: 0;
@@ -57,7 +62,7 @@ button {
 
 .pixel-name,
 .corner-mark {
-  font-family: "Bianzhidai", sans-serif;
+  font-family: "bianzhidai", sans-serif;
   font-weight: 400;
   letter-spacing: 0;
 }
@@ -71,11 +76,21 @@ button {
   cursor: pointer;
 }
 
+
+/* -------------------------------------
+   MAIN LAYOUT
+------------------------------------- */
+
 .layout {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 31.5vw 1fr;
 }
+
+
+/* -------------------------------------
+   SIDEBAR
+------------------------------------- */
 
 .sidebar {
   padding: 235px 24px 90px;
@@ -89,11 +104,14 @@ button {
   border: 0;
   background: transparent;
   padding: 0;
+
   font-size: clamp(17px, 1.35vw, 24px);
   line-height: 0.95;
-  letter-spacing: 0.075em;
+  letter-spacing: 0.06em;
+
   cursor: pointer;
   text-align: left;
+
   transition: transform 160ms ease;
 }
 
@@ -101,57 +119,42 @@ button {
   transform: translateX(7px);
 }
 
-.photo-area {
-  min-width: 0;
-  min-height: 100vh;
-  padding: 105px 0 80px 0;
 
-  display: flex;
-  justify-content: center;
+/* -------------------------------------
+   PHOTO AREA
+------------------------------------- */
+
+.photo-area {
+  min-height: 100vh;
+
+  padding: 105px 0 80px;
+
+  position: relative;
 }
 
-/* ------------------------------
-   HOME PAGE
------------------------------- */
+
+/* -------------------------------------
+   PHOTO GRID
+------------------------------------- */
 
 .photo-grid {
-  width: 100%;
-  min-height: calc(100vh - 210px);
+  width: 100vw;
 
-  display: block;
-}
-
-.photo-card {
-  margin: 0;
-  min-width: 0;
-  min-height: 0;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.photo-card:nth-child(3n) {
-  grid-row: span 2;
-}
-
-.photo-card:nth-child(5n) {
-  grid-column: span 2;
-}
-
-.photo-card img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
+  /*
+    The photo viewer is centered on the
+    entire browser window rather than
+    just the right-hand column.
+  */
+  margin-left: calc(-1 * 31.5vw);
 }
 
 
-/* ------------------------------
+/* -------------------------------------
    CATEGORY PHOTO VIEWER
------------------------------- */
+------------------------------------- */
 
 .photo-viewer {
-  width: calc(100vw - 31.5vw);
-  margin-left: -31.5vw;
+  width: 100%;
 
   min-height: calc(100vh - 225px);
 
@@ -160,10 +163,17 @@ button {
   align-items: center;
   justify-content: flex-start;
 }
+
+
+/* -------------------------------------
+   FULL PHOTO
+------------------------------------- */
+
 .full-photo {
   margin: 0;
 
   width: 100%;
+
   height: calc(100vh - 245px);
 
   display: flex;
@@ -175,31 +185,40 @@ button {
 .full-photo img {
   display: block;
 
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+
+  width: auto;
+  height: auto;
 
   object-fit: contain;
 }
+
+
+/* -------------------------------------
+   CAPTIONS
+------------------------------------- */
 
 .full-photo figcaption {
   margin-top: 10px;
 
   font-family: "TAY Big Bird", sans-serif;
   font-size: 12px;
+
   color: var(--muted);
 }
 
 
-/* ------------------------------
+/* -------------------------------------
    ARROWS
------------------------------- */
+------------------------------------- */
 
 .photo-controls {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  gap: 24px;
+  gap: 20px;
 
   margin-top: 15px;
 }
@@ -210,7 +229,7 @@ button {
 
   padding: 5px 10px;
 
-  font-size: 21px;
+  font-size: 18px;
 
   cursor: pointer;
 }
@@ -226,9 +245,9 @@ button {
 }
 
 
-/* ------------------------------
+/* -------------------------------------
    EMPTY STATE
------------------------------- */
+------------------------------------- */
 
 .empty-state {
   padding-top: 10px;
@@ -241,28 +260,31 @@ button {
 }
 
 .empty-state code {
-  font-family: "FT88", monospace;
+  font-family: "bianzhidai", sans-serif;
 }
 
 
-/* ------------------------------
+/* -------------------------------------
    CORNER MARK
------------------------------- */
+------------------------------------- */
 
 .corner-mark {
   position: fixed;
+
   right: 27px;
   bottom: 16px;
+
   z-index: 30;
 
   font-size: clamp(13px, 1.25vw, 20px);
+
   white-space: nowrap;
 }
 
 
-/* ------------------------------
+/* -------------------------------------
    MOBILE
------------------------------- */
+------------------------------------- */
 
 @media (max-width: 800px) {
 
@@ -276,13 +298,12 @@ button {
   }
 
   .photo-area {
-    padding: 10px 12px 70px;
+    padding: 10px 0 70px;
   }
 
   .photo-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: 42vw;
-    gap: 7px;
+    width: 100vw;
+    margin-left: 0;
   }
 
   .pixel-name {
