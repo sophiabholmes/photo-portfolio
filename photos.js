@@ -8,7 +8,7 @@ const photos = {
     { src: "images/bts/2.png", alt: "", caption: "elephantine" },
     { src: "images/bts/3.png", alt: "", caption: "elephantine" },
     { src: "images/bts/4.png", alt: "", caption: "elephantine" },
-    { src: "images/bts/5.png", alt: "", caption: "elephantine" },
+    { src: "images/bts/5.jpg", alt: "", caption: "elephantine" },
     { src: "images/bts/6.png", alt: "", caption: "elephantine" },
     { src: "images/bts/7.png", alt: "", caption: "elephantine" },
     { src: "images/bts/8.png", alt: "", caption: "elephantine" },
