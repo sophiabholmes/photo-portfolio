@@ -61,15 +61,10 @@ const photos = {
   ],
 
   objects: [
-    { src: "images/objects/OBJECTS-01.jpg", alt: "", caption: "" },
-    { src: "images/objects/OBJECTS-02.jpg", alt: "", caption: "" },
-    { src: "images/objects/OBJECTS-03.jpg", alt: "", caption: "" },
-    { src: "images/objects/OBJECTS-04.jpg", alt: "", caption: "" },
-    { src: "images/objects/OBJECTS-05.jpg", alt: "", caption: "" },
-    { src: "images/objects/OBJECTS-06.jpg", alt: "", caption: "" },
-    { src: "images/objects/OBJECTS-07.jpg", alt: "", caption: "" },
-    { src: "images/objects/OBJECTS-08.jpg", alt: "", caption: "" },
-    { src: "images/objects/OBJECTS-09.jpg", alt: "", caption: "" },
-    { src: "images/objects/OBJECTS-10.jpg", alt: "", caption: "" }
+    { src: "images/objects/1.jpg", alt: "", caption: "" },
+    { src: "images/objects/2.png", alt: "", caption: "" },
+    { src: "images/objects/3.png", alt: "", caption: "" },
+    { src: "images/objects/4.jpg", alt: "", caption: "" },
+    { src: "images/objects/5.png", alt: "", caption: "" },
   ]
 };
