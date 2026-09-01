@@ -41,6 +41,11 @@ button {
   font: inherit;
 }
 
+
+/* -------------------------------------
+   FRAME
+------------------------------------- */
+
 .site-frame {
   min-height: 100vh;
   border: 1px solid var(--blue);
@@ -126,9 +131,7 @@ button {
 
 .photo-area {
   min-height: 100vh;
-
   padding: 105px 0 80px;
-
   position: relative;
 }
 
@@ -138,23 +141,19 @@ button {
 ------------------------------------- */
 
 .photo-grid {
-  width: 100vw;
-
-  /*
-    The photo viewer is centered on the
-    entire browser window rather than
-    just the right-hand column.
-  */
-  margin-left: calc(-1 * 31.5vw);
+  width: 100%;
 }
 
 
 /* -------------------------------------
-   CATEGORY PHOTO VIEWER
+   PHOTO VIEWER
 ------------------------------------- */
 
 .photo-viewer {
-  width: 100%;
+  width: 68.5vw;
+
+  position: relative;
+  left: -15.75vw;
 
   min-height: calc(100vh - 225px);
 
@@ -166,6 +165,20 @@ button {
 
 
 /* -------------------------------------
+   PHOTO + CONTROLS
+------------------------------------- */
+
+.photo-and-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: fit-content;
+  max-width: 100%;
+}
+
+
+/* -------------------------------------
    FULL PHOTO
 ------------------------------------- */
 
@@ -173,7 +186,6 @@ button {
   margin: 0;
 
   width: 100%;
-
   height: calc(100vh - 245px);
 
   display: flex;
@@ -302,8 +314,18 @@ button {
   }
 
   .photo-grid {
-    width: 100vw;
-    margin-left: 0;
+    width: 100%;
+  }
+
+  .photo-viewer {
+    width: 100%;
+    left: 0;
+
+    min-height: calc(100vh - 200px);
+  }
+
+  .photo-and-controls {
+    width: 100%;
   }
 
   .pixel-name {
@@ -318,10 +340,6 @@ button {
     right: 14px;
     bottom: 9px;
     font-size: 13px;
-  }
-
-  .photo-viewer {
-    min-height: calc(100vh - 200px);
   }
 
   .full-photo {
