@@ -49,16 +49,15 @@ const photos = {
   ],
 
   portraits: [
-    { src: "images/portraits/PORTRAITS-01.jpg", alt: "", caption: "" },
-    { src: "images/portraits/PORTRAITS-02.jpg", alt: "", caption: "" },
-    { src: "images/portraits/PORTRAITS-03.jpg", alt: "", caption: "" },
-    { src: "images/portraits/PORTRAITS-04.jpg", alt: "", caption: "" },
-    { src: "images/portraits/PORTRAITS-05.jpg", alt: "", caption: "" },
-    { src: "images/portraits/PORTRAITS-06.jpg", alt: "", caption: "" },
-    { src: "images/portraits/PORTRAITS-07.jpg", alt: "", caption: "" },
-    { src: "images/portraits/PORTRAITS-08.jpg", alt: "", caption: "" },
-    { src: "images/portraits/PORTRAITS-09.jpg", alt: "", caption: "" },
-    { src: "images/portraits/PORTRAITS-10.jpg", alt: "", caption: "" }
+    { src: "images/portraits/1.png", alt: "", caption: "" },
+    { src: "images/portraits/2.png", alt: "", caption: "" },
+    { src: "images/portraits/3.png", alt: "", caption: "" },
+    { src: "images/portraits/4.jpg", alt: "", caption: "" },
+    { src: "images/portraits/5.png", alt: "", caption: "" },
+    { src: "images/portraits/6.jpg", alt: "", caption: "" },
+    { src: "images/portraits/7.jpg", alt: "", caption: "" },
+    { src: "images/portraits/8.jpg", alt: "", caption: "" },
+    { src: "images/portraits/9.jpg", alt: "", caption: "" },
   ],
 
   objects: [
