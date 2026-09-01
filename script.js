@@ -40,27 +40,33 @@ function renderCurrentPhoto() {
       }
     </figure>
 
-    <div class="photo-controls">
-      <button
-        class="photo-arrow"
-        id="previousPhoto"
-        aria-label="Previous photo"
-      >
-        ←
-      </button>
+   ${
+  currentCategory !== "home"
+    ? `
+      <div class="photo-controls">
+        <button
+          class="photo-arrow"
+          id="previousPhoto"
+          aria-label="Previous photo"
+        >
+          ←
+        </button>
 
-      <span class="photo-counter">
-        ${currentIndex + 1} / ${items.length}
-      </span>
+        <span class="photo-counter">
+          ${currentIndex + 1} / ${items.length}
+        </span>
 
-      <button
-        class="photo-arrow"
-        id="nextPhoto"
-        aria-label="Next photo"
-      >
-        →
-      </button>
-    </div>
+        <button
+          class="photo-arrow"
+          id="nextPhoto"
+          aria-label="Next photo"
+        >
+          →
+        </button>
+      </div>
+    `
+    : ""
+}
   `;
 
   photoGrid.appendChild(viewer);
