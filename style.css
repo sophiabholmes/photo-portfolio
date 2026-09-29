@@ -12,6 +12,11 @@
   font-style: normal;
 }
 
+
+/* -------------------------------------
+   BASIC SETTINGS
+------------------------------------- */
+
 :root {
   --paper: #fdf6e8;
   --ink: #151515;
@@ -26,7 +31,11 @@
 html,
 body {
   margin: 0;
+  padding: 0;
+
+  width: 100%;
   min-height: 100%;
+
   background: var(--paper);
   color: var(--ink);
 }
@@ -36,49 +45,68 @@ body {
   overflow-x: hidden;
 }
 
+
+/* -------------------------------------
+   BUTTON RESET
+------------------------------------- */
+
 button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+
   color: inherit;
   font: inherit;
+
+  padding: 0;
+  margin: 0;
 }
 
 
 /* -------------------------------------
-   FRAME
+   BLUE FRAME
 ------------------------------------- */
 
 .site-frame {
-  min-height: 100vh;
-  border: 1px solid var(--blue);
   position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  border: 1px solid var(--blue);
 }
 
 
 /* -------------------------------------
-   HEADER
+   HEADER / NAME
 ------------------------------------- */
 
 .site-header {
   position: fixed;
+
   top: 0;
   left: 0;
-  z-index: 30;
+
+  z-index: 100;
+
   padding: 17px 24px;
 }
 
-.pixel-name,
-.corner-mark {
+.pixel-name {
   font-family: "bianzhidai", sans-serif;
+
+  font-size: clamp(15px, 1.5vw, 24px);
   font-weight: 400;
+
+  line-height: 1;
+
   letter-spacing: 0;
+
+  cursor: pointer;
 }
 
-.pixel-name {
-  border: 0;
-  background: transparent;
-  padding: 0;
-  font-size: clamp(15px, 1.5vw, 24px);
-  line-height: 1;
-  cursor: pointer;
+.pixel-name:hover {
+  opacity: 0.7;
 }
 
 
@@ -87,9 +115,12 @@ button {
 ------------------------------------- */
 
 .layout {
-  min-height: 100vh;
   display: grid;
+
   grid-template-columns: 31.5vw 1fr;
+
+  width: 100%;
+  min-height: 100vh;
 }
 
 
@@ -98,24 +129,31 @@ button {
 ------------------------------------- */
 
 .sidebar {
-  padding: 235px 24px 90px;
   display: flex;
+
   flex-direction: column;
+
   gap: 87px;
+
+  padding: 235px 24px 90px;
 }
 
 .category {
   width: fit-content;
-  border: 0;
-  background: transparent;
-  padding: 0;
+
+  font-family: "TAY Big Bird", sans-serif;
 
   font-size: clamp(17px, 1.35vw, 24px);
+
+  font-weight: 400;
+
   line-height: 0.95;
+
   letter-spacing: 0.06em;
 
-  cursor: pointer;
   text-align: left;
+
+  cursor: pointer;
 
   transition: transform 160ms ease;
 }
@@ -130,14 +168,17 @@ button {
 ------------------------------------- */
 
 .photo-area {
-  min-height: 100vh;
-  padding: 105px 0 80px;
   position: relative;
+
+  min-width: 0;
+  min-height: 100vh;
+
+  padding: 105px 0 80px;
 }
 
 
 /* -------------------------------------
-   PHOTO GRID
+   PHOTO CONTAINER
 ------------------------------------- */
 
 .photo-grid {
@@ -149,17 +190,30 @@ button {
    PHOTO VIEWER
 ------------------------------------- */
 
+/*
+   68.5vw = the amount of width available
+   after the 31.5vw sidebar.
+
+   The negative left position moves the
+   viewer back toward the center of the
+   FULL browser window.
+*/
+
 .photo-viewer {
+  position: relative;
+
   width: 68.5vw;
 
-  position: relative;
   left: -15.75vw;
 
   min-height: calc(100vh - 225px);
 
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   justify-content: flex-start;
 }
 
@@ -170,7 +224,9 @@ button {
 
 .photo-and-controls {
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
 
   width: fit-content;
@@ -183,16 +239,28 @@ button {
 ------------------------------------- */
 
 .full-photo {
-  margin: 0;
+  width: 68.5vw;
 
-  width: 100%;
   height: calc(100vh - 245px);
 
+  margin: 0;
+
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   justify-content: center;
 }
+
+
+/*
+   DO NOT stretch the image.
+
+   This preserves the original aspect
+   ratio of every photograph.
+*/
 
 .full-photo img {
   display: block;
@@ -215,19 +283,26 @@ button {
   margin-top: 10px;
 
   font-family: "TAY Big Bird", sans-serif;
+
   font-size: 12px;
 
+  line-height: 1;
+
   color: var(--muted);
+
+  text-align: center;
 }
 
 
 /* -------------------------------------
-   ARROWS
+   ARROWS + NUMBER
 ------------------------------------- */
 
 .photo-controls {
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   gap: 20px;
@@ -236,12 +311,13 @@ button {
 }
 
 .photo-arrow {
-  border: 0;
-  background: transparent;
-
-  padding: 5px 10px;
+  font-family: "TAY Big Bird", sans-serif;
 
   font-size: 18px;
+
+  line-height: 1;
+
+  padding: 5px 10px;
 
   cursor: pointer;
 }
@@ -252,32 +328,62 @@ button {
 
 .photo-counter {
   font-family: "TAY Big Bird", sans-serif;
+
   font-size: 12px;
+
+  line-height: 1;
+
   color: var(--muted);
 }
 
 
 /* -------------------------------------
-   EMPTY STATE
+   EMPTY CATEGORY
 ------------------------------------- */
 
 .empty-state {
   padding-top: 10px;
+
   max-width: 420px;
 
-  font-size: 13px;
+  font-family: "TAY Big Bird", sans-serif;
+
+  font-size: 12px;
+
   line-height: 1.5;
 
   color: var(--muted);
 }
 
-.empty-state code {
-  font-family: "bianzhidai", sans-serif;
+
+/* -------------------------------------
+   CONTACT — BOTTOM LEFT
+------------------------------------- */
+
+.contact {
+  position: fixed;
+
+  left: 27px;
+  bottom: 16px;
+
+  z-index: 100;
+
+  font-family: "TAY Big Bird", sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1;
+
+  letter-spacing: 0;
+
+  color: var(--ink);
+
+  white-space: nowrap;
 }
 
 
 /* -------------------------------------
-   CORNER MARK
+   "PHOTO PORTFOLIO" — BOTTOM RIGHT
 ------------------------------------- */
 
 .corner-mark {
@@ -286,9 +392,17 @@ button {
   right: 27px;
   bottom: 16px;
 
-  z-index: 30;
+  z-index: 100;
+
+  font-family: "bianzhidai", sans-serif;
 
   font-size: clamp(13px, 1.25vw, 20px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: 0;
 
   white-space: nowrap;
 }
@@ -304,64 +418,73 @@ button {
     display: block;
   }
 
+
   .sidebar {
     padding: 101px 18px 25px;
+
     gap: 18px;
   }
+
 
   .photo-area {
     padding: 10px 0 70px;
   }
 
+
   .photo-grid {
     width: 100%;
   }
 
+
   .photo-viewer {
     width: 100%;
+
     left: 0;
 
     min-height: calc(100vh - 200px);
   }
 
+
   .photo-and-controls {
     width: 100%;
   }
+
+
+  .full-photo {
+    width: 100%;
+
+    height: calc(100vh - 290px);
+  }
+
+
+  .full-photo img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
 
   .pixel-name {
     font-size: 15px;
   }
 
+
   .category {
     font-size: 20px;
   }
 
+
+  .contact {
+    left: 14px;
+    bottom: 9px;
+
+    font-size: 11px;
+  }
+
+
   .corner-mark {
     right: 14px;
     bottom: 9px;
+
     font-size: 13px;
   }
-
-  .full-photo {
-    height: calc(100vh - 290px);
-  }
-
-  .full-photo img {
-    max-width: 100%;
-    max-height: 100%;
-  body::after {
-  content: "contact: sophia@streetnine.com";
-
-  position: fixed;
-  left: 27px;
-  bottom: 16px;
-
-  z-index: 100;
-
-  font-family: "TAY Big Bird", sans-serif;
-  font-size: 12px;
-  line-height: 1;
-
-  color: var(--ink);
-  white-space: nowrap;
 }
