@@ -349,16 +349,19 @@ button {
   .full-photo img {
     max-width: 100%;
     max-height: 100%;
-  }
-  .contact {
+  body::after {
+  content: "contact: sophia@streetnine.com";
+
   position: fixed;
   left: 27px;
   bottom: 16px;
-  z-index: 30;
+
+  z-index: 100;
 
   font-family: "TAY Big Bird", sans-serif;
   font-size: 12px;
   line-height: 1;
 
+  color: var(--ink);
   white-space: nowrap;
 }
